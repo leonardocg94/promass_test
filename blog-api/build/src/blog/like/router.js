@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.blogLikeRouter = void 0;
+const express_1 = require("express");
+const common_1 = require("../../common");
+const controller_1 = require("./controller");
+const blogLikeRouter = (0, express_1.Router)();
+exports.blogLikeRouter = blogLikeRouter;
+blogLikeRouter.use(common_1.checkTokenMiddleware);
+blogLikeRouter.post("", controller_1.toggleBlogLikeController);
